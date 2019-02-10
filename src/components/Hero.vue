@@ -1,7 +1,9 @@
 <template>
-  <div class="text-center py-32">
-    <h1 class="text-5xl mb-2">{{ title }}</h1>
-    <h2 class="text-2xl">{{ subtitle }}</h2>
+  <div class="py-32 bg-blue text-blue-lighter">
+    <div class="container mx-auto">
+      <h1 class="text-5xl mb-2">{{ title }}</h1>
+      <h2 class="text-2xl">{{ subtitle }}</h2>
+    </div>
   </div>
 </template>
 
