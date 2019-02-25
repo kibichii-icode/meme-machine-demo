@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Hero title="Hello" subtitle="Whatup">button to login or register goes here</Hero>
+    <Hero title="Hello" subtitle="Whatup">
+      <a href="#" class="button is-danger is-large">Login</a>
+      <a href="#" class="button is-danger is-large is-outlined">Sign Up</a>
+    </Hero>
 
     <!-- show a users memes -->
     <MyMemes/>
@@ -24,3 +27,6 @@ export default {
   components: { Hero, MyMemes, CreateAMemeSection }
 };
 </script>
+
+<style lang="scss" scoped>
+</style>
