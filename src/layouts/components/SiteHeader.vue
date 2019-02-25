@@ -23,6 +23,7 @@
 
           <!-- right side nav -->
           <div class="navbar-end">
+            <router-link to="/create" class="navbar-item">Create a Meme</router-link>
             <router-link to="/" class="navbar-item">Login</router-link>
           </div>
         </div>
@@ -45,8 +46,5 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   background-color: transparent !important;
-}
-
-.navbar-item {
 }
 </style>

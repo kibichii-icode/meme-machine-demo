@@ -4,7 +4,7 @@
     <!-- if not logged in, then redirect them to the login/register page -->
     <!-- trending gifs -->
     <div v-if="trendingGifs">
-      <h2 class="title is-2">Create a Meme</h2>
+      <h2 class="title is-2">Let's make magic</h2>
       <p>Select a GIF to create a meme.</p>
 
       <div class="columns is-multiline">
