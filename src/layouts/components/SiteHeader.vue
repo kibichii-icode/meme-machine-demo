@@ -29,18 +29,11 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <SiteSearchBar/>
-    </div>
   </div>
 </template>
 
 <script>
-import SiteSearchBar from "./SiteSearchBar";
-
-export default {
-  components: { SiteSearchBar }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
