@@ -5,7 +5,7 @@
         <div class="navbar-menu">
           <!-- logo -->
           <div class="navbar-brand">
-            <router-link class="navbar-item" to="https://bulma.io">Meme Machine
+            <router-link class="navbar-item" to="/">Meme Machine
               <!-- <img src="@/assets/img/bulma-logo.png" width="112" height="28"> -->
             </router-link>
 

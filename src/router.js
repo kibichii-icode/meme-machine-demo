@@ -14,13 +14,13 @@ export default new Router({
         import(/* webpackChunkName: "home" */ './views/home/Home.vue')
     },
     {
-      path: 'about',
+      path: '/about',
       name: 'about',
       component: () =>
         import(/* webpackChunkName: "about" */ './views/about/About.vue')
     },
     {
-      path: 'create',
+      path: '/create',
       name: 'create',
       component: () =>
         import(/* webpackChunkName: "create" */ './views/create/Create.vue')

@@ -2,7 +2,8 @@
   <div>
     <!-- we need to find a gif first -->
     <div v-if="currentState === 1">
-      <Step1Choose :gif="gif" @gifChosen="handleGifChosen"/>
+      <SearchGifs/>
+      <TrendingGifs/>
     </div>
 
     <!-- gif is chosen. now caption it -->
@@ -15,18 +16,19 @@
 </template>
 
 <script>
-import Step1Choose from "./steps/Step1Choose";
 import Step2Caption from "./steps/Step2Caption";
+import TrendingGifs from "./TrendingGifs";
+import SearchGifs from "./SearchGifs";
 
 export default {
+  components: { Step1Choose, Step2Caption, TrendingGifs, SearchGifs },
   data() {
     return {
-      currentState: null,
+      currentState: 1,
       gif: null,
       meme: null
     };
   },
-  components: { Step1Choose, Step2Caption },
   methods: {
     handleGifChosen(e) {
       console.log(e);

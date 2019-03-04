@@ -14,6 +14,7 @@ import SearchGifs from "../SearchGifs";
 
 export default {
   components: { TrendingGifs, SearchGifs },
+  props: ["gif"],
   methods: {
     handleGifChosen() {}
   }
