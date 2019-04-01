@@ -34,7 +34,7 @@ export default {
     getTrendingGifs() {
       const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
       axios
-        .get(`${apiUrl}/1/gifs/trending`)
+        .get(`${apiUrl}/gifs/trending`)
         .then(res => (this.trendingGifs = res.data));
     }
   }

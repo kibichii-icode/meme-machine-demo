@@ -1,7 +1,7 @@
 <template>
-  <div class="memes-box">
-    <h2 class="title is-2">My Memes</h2>
-    <p>
+  <div>
+    <h2 class="text-5xl mb-10">My Memes</h2>
+    <p class="text-xl">
       You don't have any memes yet.
       <a href="#">Create one now.</a>
     </p>

@@ -1,11 +1,15 @@
 <template>
-  <div class="footer has-text-centered">i are footer</div>
+  <div
+    class="bg-green-darkest text-green-dark text-center py-10"
+  >Copyright &copy; Meme Machine 1850-{{ thisYear }}</div>
 </template>
 
-<style lang="scss" scoped>
-.footer {
-  background: #121212;
-  color: #777;
-}
-</style>
-
+<script>
+export default {
+  data() {
+    return {
+      thisYear: new Date().getFullYear()
+    };
+  }
+};
+</script>
