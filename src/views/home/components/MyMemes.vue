@@ -25,13 +25,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.memes-box {
-  background: #222;
-  border-radius: 5px;
-  padding: 50px;
-
-  p {
-    margin-bottom: 50px;
-  }
-}
 </style>

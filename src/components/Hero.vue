@@ -1,6 +1,6 @@
 <template>
-  <div class="text-center py-32" :class="[color, size]">
-    <div class="container">
+  <div class="py-32" :class="[color, size]">
+    <div class="container mx-auto">
       <slot/>
     </div>
   </div>

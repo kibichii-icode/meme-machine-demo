@@ -1,25 +1,23 @@
 <template>
   <div>
-    <Hero class="has-text-centered" size="is-medium">
-      <h1 class="title is-1 is-spaced">The Factory is Open</h1>
-      <h2 class="subtitle is-2">Meme Machine Here We Go!</h2>
+    <Hero color="bg-green-darker" class="text-center text-xl text-green-lighter">
+      <h1 class="mb-4">The Factory is Open</h1>
+      <h2 class="mb-10">Make them jokes</h2>
 
-      <a class="button is-danger is-large">Create a Meme</a>
-      <a class="button is-danger is-large is-outlined">Sign Up</a>
+      <div>
+        <router-link to="/" class="button mr-8">Create a Meme</router-link>
+        <router-link to="/" class="button">Sign Up</router-link>
+      </div>
     </Hero>
 
     <!-- show a users memes -->
-    <div class="section">
-      <div class="container">
-        <MyMemes/>
-      </div>
+    <div class="container mx-auto py-32">
+      <MyMemes/>
     </div>
 
     <!-- or show no memes or user is logged out -->
-    <div class="section">
-      <div class="container">
-        <CreateAMemeSection/>
-      </div>
+    <div class="container mx-auto py-32">
+      <CreateAMemeSection/>
     </div>
   </div>
 </template>
@@ -35,8 +33,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1,
+h2 {
+  font-family: "Staatliches", sans-serif;
+  @apply text-green-lighter;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 80px;
+}
+
 .button {
-  margin-top: 30px;
-  margin-right: 15px;
+  @apply rounded 
+    inline-block
+    border 
+    border-green-lighter
+    text-green-lighter
+    py-4
+    px-6
+    no-underline;
 }
 </style>

@@ -42,16 +42,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.create-a-meme-section {
-  background: #222;
-  border-radius: 5px;
-  padding: 50px;
-
-  p {
-    margin-bottom: 50px;
-  }
-}
-
 .gif {
   position: relative;
   height: 100%;

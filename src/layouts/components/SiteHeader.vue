@@ -1,32 +1,20 @@
 <template>
-  <div class="site-header">
-    <nav class="navbar is-dark is-transparent">
-      <div class="container">
-        <div class="navbar-menu">
-          <!-- logo -->
-          <div class="navbar-brand">
-            <router-link class="navbar-item" to="/">Meme Machine
-              <!-- <img src="@/assets/img/bulma-logo.png" width="112" height="28"> -->
-            </router-link>
+  <div class="bg-green-darker">
+    <nav class="px-10 flex">
+      <!-- logo -->
+      <div class="flex">
+        <router-link class="link logo text-xl" to="/">Meme Machine</router-link>
+      </div>
 
-            <a role="button" class="navbar-burger burger">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
+      <!-- left side nav -->
+      <div class="flex">
+        <router-link class="link" to="/about">About</router-link>
+      </div>
 
-          <!-- left side nav -->
-          <div class="navbar-start">
-            <router-link to="/about" class="navbar-item">About</router-link>
-          </div>
-
-          <!-- right side nav -->
-          <div class="navbar-end">
-            <router-link to="/create" class="navbar-item">Create a Meme</router-link>
-            <router-link to="/" class="navbar-item">Login</router-link>
-          </div>
-        </div>
+      <!-- right side nav -->
+      <div class="ml-auto flex">
+        <router-link class="link" to="/create">Create a Meme</router-link>
+        <router-link class="link border border-green-lighter my-4 rounded" to="/">Login</router-link>
       </div>
     </nav>
   </div>
@@ -37,7 +25,24 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.navbar {
-  background-color: transparent !important;
+.link {
+  @apply px-8
+    py-4
+    block 
+    text-green-lighter 
+    no-underline 
+    text-lg 
+    flex
+    items-center;
+
+  &:hover {
+    @apply text-green-lightest;
+  }
+}
+
+.logo {
+  @apply text-5xl text-green-lighter;
+
+  font-family: "Staatliches", sans-serif;
 }
 </style>
