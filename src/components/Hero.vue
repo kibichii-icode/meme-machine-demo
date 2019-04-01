@@ -1,9 +1,7 @@
 <template>
-  <div class="hero is-bold is-dark" :class="[color, size]">
-    <div class="hero-body">
-      <div class="container">
-        <slot/>
-      </div>
+  <div class="text-center py-32" :class="[color, size]">
+    <div class="container">
+      <slot/>
     </div>
   </div>
 </template>
