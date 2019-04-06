@@ -1,12 +1,20 @@
 <template>
   <div>
-    <Hero color="bg-green-darker" class="text-center text-xl text-green-lighter">
-      <h1 class="mb-4">The Factory is Open</h1>
-      <h2 class="mb-10">Make them jokes</h2>
+    <Hero color="bg-green-darker" class="text-xl text-green-lighter">
+      <div class="flex pr-8">
+        <div class="flex flex-col items-end mr-8 justify-center">
+          <h1 class="mb">The Factory is Open</h1>
+          <h2 class="mb-10">Make them jokes</h2>
 
-      <div>
-        <router-link to="/" class="button mr-8">Create a Meme</router-link>
-        <router-link to="/" class="button">Sign Up</router-link>
+          <div>
+            <router-link to="/" class="button mr-8">Create a Meme</router-link>
+            <router-link to="/" class="button">Sign Up</router-link>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://media.giphy.com/media/69w8VPB8AqLd7xC3dg/giphy.gif" class="rounded-lg">
+        </div>
       </div>
     </Hero>
 
@@ -40,11 +48,11 @@ h2 {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 80px;
 }
 
 h2 {
-  font-size: 80px;
+  font-size: 40px;
 }
 
 .button {
