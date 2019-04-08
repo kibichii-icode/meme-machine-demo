@@ -1,19 +1,27 @@
 <template>
   <div>
-    <Hero color="bg-green-darker" class="text-xl text-green-lighter">
+    <Hero color="bg-green-dark" class="text-xl text-green-lighter">
       <div class="flex pr-8">
-        <div class="flex flex-col items-end mr-8 justify-center">
+        <!-- left column -->
+        <div v-if="randomGif" class="relative w-2/3">
+          <Meme :url="randomGif.images.original" :caption="memeText"/>
+        </div>
+
+        <!-- right column -->
+        <div class="flex flex-col items-end mr-8 justify-center w-1/3">
           <h1 class="mb">The Factory is Open</h1>
           <h2 class="mb-10">Make them jokes</h2>
 
-          <div>
-            <router-link to="/" class="button mr-8">Create a Meme</router-link>
-            <router-link to="/" class="button">Sign Up</router-link>
+          <div class="w-full">
+            <form>
+              <input
+                type="text"
+                class="w-full p-3 text-xl rounded shadow border text-right"
+                placeholder="Write your meme here..."
+                v-model="memeText"
+              >
+            </form>
           </div>
-        </div>
-
-        <div>
-          <img src="https://media.giphy.com/media/69w8VPB8AqLd7xC3dg/giphy.gif" class="rounded-lg">
         </div>
       </div>
     </Hero>
@@ -31,12 +39,33 @@
 </template>
 
 <script>
+import axios from "axios";
 import Hero from "@/components/Hero";
+import Meme from "@/components/Meme";
 import MyMemes from "./components/MyMemes";
 import CreateAMemeSection from "./components/CreateAMemeSection";
 
 export default {
-  components: { Hero, MyMemes, CreateAMemeSection }
+  components: { Hero, Meme, MyMemes, CreateAMemeSection },
+  data() {
+    return {
+      randomGif: null,
+      memeText: ""
+    };
+  },
+  methods: {
+    getRandomGif() {
+      const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
+
+      console.log("getting random");
+      axios
+        .get(`${apiUrl}/gifs/random`)
+        .then(res => (this.randomGif = res.data));
+    }
+  },
+  mounted() {
+    this.getRandomGif();
+  }
 };
 </script>
 
@@ -48,7 +77,7 @@ h2 {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 50px;
 }
 
 h2 {

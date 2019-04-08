@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green-darker">
+  <div class="bg-green-dark">
     <nav class="px-10 flex">
       <!-- logo -->
       <div class="flex">
