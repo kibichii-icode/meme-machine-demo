@@ -1,28 +1,25 @@
 <template>
   <div>
-    <Hero color="bg-green-dark" class="text-xl text-green-lighter">
-      <div class="flex pr-8">
-        <!-- left column -->
-        <div v-if="randomGif" class="relative w-2/3">
-          <Meme :url="randomGif.images.original" :caption="memeText"/>
+    <Hero color="bg-green-dark" class="text-xl">
+      <div v-if="randomGif" class="relative w-2/3 mx-auto">
+        <div class="caption-this absolute text-4xl text-green-lightest">
+          <p>Try it out! Caption this 👇</p>
         </div>
 
-        <!-- right column -->
-        <div class="flex flex-col items-end mr-8 justify-center w-1/3">
-          <h1 class="mb">The Factory is Open</h1>
-          <h2 class="mb-10">Make them jokes</h2>
+        <form class="flex" @submit.prevent="handleSubmit">
+          <input
+            type="text"
+            class="flex-1 p-4 mb-3 text-xl rounded shadow bg-green-lighter mr-2"
+            placeholder="Caption this thing..."
+            v-model="memeText"
+          >
+          <button
+            type="submit"
+            class="h-full p-4 w-32 bg-yellow text-yellow-darker rounded"
+          >Save It!</button>
+        </form>
 
-          <div class="w-full">
-            <form>
-              <input
-                type="text"
-                class="w-full p-3 text-xl rounded shadow border text-right"
-                placeholder="Write your meme here..."
-                v-model="memeText"
-              >
-            </form>
-          </div>
-        </div>
+        <Meme :url="randomGif.images.original" :caption="memeText"/>
       </div>
     </Hero>
 
@@ -54,14 +51,17 @@ export default {
     };
   },
   methods: {
-    getRandomGif() {
+    async getRandomGif() {
       const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
 
-      console.log("getting random");
-      axios
-        .get(`${apiUrl}/gifs/random`)
-        .then(res => (this.randomGif = res.data));
-    }
+      try {
+        const { data } = await axios.get(`${apiUrl}/gifs/random`);
+        this.randomGif = data;
+      } catch (e) {
+        alert("wtf");
+      }
+    },
+    handleSubmit() {}
   },
   mounted() {
     this.getRandomGif();
@@ -70,28 +70,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1,
-h2 {
-  font-family: "Staatliches", sans-serif;
-  @apply text-green-lighter;
-}
-
-h1 {
-  font-size: 50px;
-}
-
-h2 {
-  font-size: 40px;
-}
-
-.button {
-  @apply rounded 
-    inline-block
-    border 
-    border-green-lighter
-    text-green-lighter
-    py-4
-    px-6
-    no-underline;
+.caption-this {
+  top: -70px;
+  left: -150px;
+  transform: rotate(-7deg);
+  font-family: "Permanent Marker";
 }
 </style>
