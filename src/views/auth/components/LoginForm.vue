@@ -1,24 +1,22 @@
 <template>
   <div>
-    <form :submit="submitForm">
+    <form @submit.prevent="handleSubmit">
       <!-- email -->
-      <div class="field">
-        <label for class="label"></label>
-        <input type="email" class="input">
+      <label>Email</label>
+      <input type="email" class="input" v-model="email">
 
-        <p class="help is-error" v-if="$v.email.dirty && $v.email.invalid">Email is required.</p>
-      </div>
+      <p class="help is-error" v-if="$v.email.dirty && $v.email.invalid">Email is required.</p>
 
       <!-- password -->
-      <div class="field">
-        <label for class="label"></label>
-        <input type="email" class="input">
+      <label>Password</label>
+      <input type="password" class="input" v-model="password">
 
-        <p
-          class="help is-error"
-          v-if="$v.password.dirty && $v.password.invalid"
-        >Password is required and must be 6 characters long.</p>
-      </div>
+      <p
+        class="help is-error"
+        v-if="$v.password.dirty && $v.password.invalid"
+      >Password is required and must be 6 characters long.</p>
+
+      <button type="submit" class="button is-large is-danger">Login</button>
     </form>
   </div>
 </template>
@@ -42,6 +40,14 @@ export default {
     password: {
       required,
       minLength: minLength(6)
+    }
+  },
+  methods: {
+    handleSubmit() {
+      this.$store
+        .dispatch("login", { email: this.email, password: this.password })
+        .then(() => this.$router.push("/"))
+        .catch(console.error);
     }
   }
 };
