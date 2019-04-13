@@ -28,11 +28,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async login({ commit }, email, password) {
-      commit('auth_request');
+    async login(context, email, password) {
+      context.commit('auth_request');
 
       try {
-        const response = await axios.post('http://localhost:3000/login', {
+        const response = await axios.post('http://localhost:8000/login', {
           email,
           password
         });
@@ -40,21 +40,21 @@ export default new Vuex.Store({
         const { token, user } = response.data;
         localStorage.setItem('token', token);
         axios.defaults.headers.common['Authorization'] = token;
-        commit('auth_success', token, user);
+        context.commit('auth_success', token, user);
 
         return Promise.resolve(response);
       } catch (err) {
-        commit('auth_error');
+        context.commit('auth_error');
         localStorage.removeItem('token');
         return Promise.reject(err);
       }
     },
-    register({ commit }, user) {
+    register(context, user) {
       return new Promise((resolve, reject) => {
-        commit('auth_request');
+        context.commit('auth_request');
 
         axios({
-          url: 'http://localhost:3000/register',
+          url: 'http://localhost:8000/register',
           data: user,
           method: 'POST'
         })
@@ -64,19 +64,19 @@ export default new Vuex.Store({
             localStorage.setItem('token', token);
             // Add the following line:
             axios.defaults.headers.common['Authorization'] = token;
-            commit('auth_success', token, user);
+            context.commit('auth_success', token, user);
             resolve(resp);
           })
           .catch(err => {
-            commit('auth_error', err);
+            context.commit('auth_error', err);
             localStorage.removeItem('token');
             reject(err);
           });
       });
     },
-    logout({ commit }) {
+    logout(context) {
       return new Promise((resolve, reject) => {
-        commit('logout');
+        context.commit('logout');
         localStorage.removeItem('token');
         delete axios.defaults.headers.common['Authorization'];
         resolve();

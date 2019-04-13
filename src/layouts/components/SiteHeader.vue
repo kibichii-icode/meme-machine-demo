@@ -26,14 +26,7 @@ export default {};
 
 <style lang="scss" scoped>
 .link {
-  @apply px-8
-    py-4
-    block 
-    text-green-lighter 
-    no-underline 
-    text-lg 
-    flex
-    items-center;
+  @apply px-8 py-4 block text-green-lighter no-underline text-lg flex items-center;
 
   &:hover {
     @apply text-green-lightest;
