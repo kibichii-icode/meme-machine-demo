@@ -9,6 +9,11 @@
         {{ learn }}
       </li>
     </ul>
+
+    <a
+      href="https://scotch.io/books/vue"
+      class="py-4 px-2 bg-yellow block no-underline text-center text-xl text-yellow-darker rounded shadow mt-8 hover:bg-yellow-light"
+    >Get the Book</a>
   </div>
 </template>
 
