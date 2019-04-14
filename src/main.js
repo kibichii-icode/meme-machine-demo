@@ -4,6 +4,7 @@ import TreeView from 'vue-json-tree-view';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import './fontawesome';
 
 // for our demo app to show a tour guide/features on a page
 import TourGuide from './components/TourGuide';
