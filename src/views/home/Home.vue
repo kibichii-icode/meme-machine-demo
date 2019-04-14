@@ -32,6 +32,17 @@
     <div class="container mx-auto py-32">
       <CreateAMemeSection/>
     </div>
+
+    <TourGuide
+      :willLearn="[
+        'Composing Vue components',
+        'Site layouts',
+        'Data binding',
+        'Login modal',
+        '3rd party components (icons, modals)',
+        'API calls to get data'
+    ]"
+    ></TourGuide>
   </div>
 </template>
 

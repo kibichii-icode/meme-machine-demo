@@ -14,7 +14,10 @@
       <!-- right side nav -->
       <div class="ml-auto flex">
         <router-link class="link" to="/create">Create a Meme</router-link>
-        <router-link class="link border border-green-lighter my-4 rounded" to="/login">Login</router-link>
+        <router-link class="link border border-green-lighter my-4 rounded" to="/login">
+          Login
+          <FontAwesomeIcon class="ml-3" icon="coffee"/>
+        </router-link>
       </div>
     </nav>
   </div>
