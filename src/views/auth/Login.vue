@@ -4,6 +4,14 @@
       <h2 class="text-4xl text-green-dark text-center mb-16">Login</h2>
       <LoginForm/>
     </div>
+
+    <TourGuide
+      :willLearn="[
+        'Vue form validation',
+        'Async validation with API checks',
+        'Processing a form' 
+      ]"
+    />
   </div>
 </template>
 

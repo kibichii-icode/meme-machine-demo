@@ -39,8 +39,6 @@
 
     <p class="mt-10 mb-6">For Debugging:</p>
     <tree-view :data="$v"/>
-
-    <TourGuide>stuff goes here</TourGuide>
   </div>
 </template>
 

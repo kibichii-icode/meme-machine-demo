@@ -41,8 +41,8 @@
         'Login modal',
         '3rd party components (icons, modals)',
         'API calls to get data'
-    ]"
-    ></TourGuide>
+      ]"
+    />
   </div>
 </template>
 
