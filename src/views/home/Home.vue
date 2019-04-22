@@ -19,7 +19,10 @@
           >Save It!</button>
         </form>
 
-        <Meme :url="randomGif.images.original" :caption="memeText"/>
+        <div class="relative">
+          <button @click="getRandomGif" class="absolute pin-t pin-r mr-2 mt-2">🔃</button>
+          <Meme :url="randomGif.images.original" :caption="memeText"/>
+        </div>
       </div>
     </Hero>
 
