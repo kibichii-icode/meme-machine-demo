@@ -34,5 +34,6 @@ export default {
   top: -30px;
   left: -30px;
   font-size: 4rem;
+  filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.2));
 }
 </style>
