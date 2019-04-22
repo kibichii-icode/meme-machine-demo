@@ -15,7 +15,7 @@
           >
           <button
             type="submit"
-            class="h-full p-4 w-32 bg-yellow text-yellow-darker rounded"
+            class="h-full p-4 w-32 bg-red-dark text-red-lightest rounded"
           >Save It!</button>
         </form>
 

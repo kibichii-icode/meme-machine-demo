@@ -1,15 +1,26 @@
 <template>
   <div>
-    <h2 class="text-5xl mb-10">My Memes</h2>
-    <p class="text-xl">
-      You don't have any memes yet.
-      <a href="#">Create one now.</a>
-    </p>
+    <h2 class="text-5xl mb-10 text-green-darker text-center">My Memes</h2>
+    <div class="text-xl text-center" v-if="!memes">
+      <h3>You don't have any memes yet</h3>
+
+      <div class="w-3/4 mt-10 mx-auto">
+        <ReminderSVG/>
+      </div>
+
+      <a
+        href="#"
+        class="py-6 px-10 rounded-lg bg-red text-red-lightest no-underline text-3xl shadow-lg"
+      >Create a Meme</a>
+    </div>
   </div>
 </template>
 
 <script>
+import ReminderSVG from "@/assets/img/reminder.svg";
+
 export default {
+  components: { ReminderSVG },
   data() {
     return {
       memes: null
