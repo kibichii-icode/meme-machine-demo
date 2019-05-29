@@ -7,8 +7,8 @@
       <h2 class="title is-2">Let's make magic</h2>
       <p>Select a GIF to create a meme.</p>
 
-      <div class="columns is-multiline">
-        <div class="column is-3" v-for="gif in trendingGifs" :key="gif.id">
+      <div class="flex flex-wrap">
+        <div class="w-1/2 p-2" v-for="gif in trendingGifs" :key="gif.id">
           <router-link class="gif" :to="{ name: 'create', params: { gifId: gif.id }}">
             <img :src="gif.images.fixed_height">
           </router-link>

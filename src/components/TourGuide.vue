@@ -5,7 +5,7 @@
     <h3 class="text-lg mb-8 text-green-800">What you'll learn on this page:</h3>
     <ul class="list-reset">
       <li v-for="(learn, index) in willLearn" :key="index" class="flex items-center mb-3">
-        <FontAwesomeIcon icon="check" class="check mr-3 text-lg text-green"/>
+        <FontAwesomeIcon icon="check" class="check mr-3 text-lg text-green-500"/>
         {{ learn }}
       </li>
     </ul>
