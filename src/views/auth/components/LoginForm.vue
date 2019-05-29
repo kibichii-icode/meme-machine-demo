@@ -7,11 +7,11 @@
         <input type="email" class="input" v-model.trim.lazy="$v.email.$model">
 
         <p
-          class="text-sm text-red-dark mt-2"
+          class="text-sm text-red-800 mt-2"
           v-if="$v.email.$dirty && !$v.email.required"
         >Email is required.</p>
         <p
-          class="text-sm text-red-dark mt-2"
+          class="text-sm text-red-800 mt-2"
           v-if="$v.email.$dirty && !$v.email.email"
         >Must be a valid email.</p>
       </div>
@@ -22,18 +22,18 @@
         <input type="password" class="input" v-model.lazy="$v.password.$model">
 
         <p
-          class="text-sm text-red-dark mt-2"
+          class="text-sm text-red-800 mt-2"
           v-if="$v.password.$dirty && !$v.password.required"
         >Password is required.</p>
         <p
-          class="text-sm text-red-dark mt-2"
+          class="text-sm text-red-800 mt-2"
           v-if="$v.password.$dirty && !$v.password.minLength"
         >Password must be 6 characters long.</p>
       </div>
 
       <button
         type="submit"
-        class="w-full bg-green hover:bg-green-dark text-white font-bold p-5 rounded focus:outline-none focus:shadow-outline"
+        class="w-full bg-green hover:bg-green-700 text-white font-bold p-5 rounded focus:outline-none focus:shadow-outline"
       >Login</button>
     </form>
 
@@ -84,11 +84,11 @@ export default {
 
 <style lang="scss" scoped>
 label {
-  @apply block text-grey-darker text-sm font-bold mb-2;
+  @apply block text-gray-800 text-sm font-bold mb-2;
 }
 
 input {
-  @apply shadow appearance-none border rounded w-full p-4 text-grey-darker leading-tight text-lg;
+  @apply shadow appearance-none border rounded w-full p-4 text-gray-800 leading-tight text-lg;
 }
 </style>
 

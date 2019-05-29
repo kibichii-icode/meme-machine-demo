@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-green-darkest text-green-dark text-center py-10"
+    class="bg-green-800 text-green-500 text-center py-10"
   >Copyright &copy; Meme Machine 1850-{{ thisYear }}</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-5xl mb-10 text-green-darker text-center">My Memes</h2>
+    <h2 class="text-5xl mb-10 text-green-800 text-center">My Memes</h2>
     <div class="text-xl text-center" v-if="!memes">
       <h3>You don't have any memes yet</h3>
 
@@ -10,7 +10,7 @@
 
       <a
         href="#"
-        class="py-6 px-10 rounded-lg bg-red text-red-lightest no-underline text-3xl shadow-lg"
+        class="py-6 px-10 rounded-lg bg-red-500 text-red-100 no-underline text-3xl shadow-lg"
       >Create a Meme</a>
     </div>
   </div>

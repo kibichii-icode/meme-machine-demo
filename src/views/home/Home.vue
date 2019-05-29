@@ -1,26 +1,23 @@
 <template>
   <div>
-    <Hero color="bg-green-dark" class="text-xl">
+    <Hero color="bg-green-800" class="text-xl">
       <div v-if="randomGif" class="relative w-2/3 mx-auto">
-        <div class="caption-this absolute text-4xl text-green-lightest">
+        <div class="caption-this absolute text-4xl text-green-200">
           <p>Try it out! Caption this 👇</p>
         </div>
 
         <form class="flex" @submit.prevent="handleSubmit">
           <input
             type="text"
-            class="flex-1 p-4 mb-3 text-xl rounded shadow bg-green-lighter mr-2"
+            class="flex-1 p-4 mb-3 text-xl rounded shadow bg-green-300 mr-2"
             placeholder="Caption this thing..."
             v-model="memeText"
           >
-          <button
-            type="submit"
-            class="h-full p-4 w-32 bg-red-dark text-red-lightest rounded"
-          >Save It!</button>
+          <button type="submit" class="h-full p-4 w-32 bg-red-700 text-red-100 rounded">Save It!</button>
         </form>
 
         <div class="relative">
-          <button @click="getRandomGif" class="absolute pin-t pin-r mr-2 mt-2">🔃</button>
+          <button @click="getRandomGif" class="absolute top-0 right-0 mr-2 mt-2">🔃</button>
           <Meme :url="randomGif.images.original" :caption="memeText"/>
         </div>
       </div>

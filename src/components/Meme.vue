@@ -2,7 +2,7 @@
   <div class="meme">
     <img :src="url" class="rounded-lg w-full h-full">
     <p
-      class="caption absolute pin-b pin-l pin-r mb-8 text-4xl text-white uppercase px-3 text-center"
+      class="caption absolute bottom-0 left-0 right-0 mb-8 text-4xl text-white uppercase px-3 text-center"
     >{{ caption }}</p>
   </div>
 </template>

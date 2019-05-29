@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-green-lightest flex items-center justify-center min-h-screen">
+  <div class="bg-green-200 flex items-center justify-center min-h-screen">
     <div class="bg-white shadow-lg p-16 rounded-lg mt-32 mb-32 w-1/3">
-      <h2 class="text-4xl text-green-dark text-center mb-16">Login</h2>
+      <h2 class="text-4xl text-green-500 text-center mb-16">Login</h2>
       <LoginForm/>
     </div>
 
