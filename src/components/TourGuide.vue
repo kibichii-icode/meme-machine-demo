@@ -1,8 +1,8 @@
 <template>
-  <div class="tour-guide fixed bg-white rounded shadow-lg bottom-0 right-0 mb-10 mr-10 p-10 w-1/5">
+  <div class="tour-guide fixed bg-white rounded shadow-lg bottom-0 right-0 mb-10 mr-10 p-6 w-1/5">
     <FontAwesomeIcon icon="star" class="star absolute text-yellow-500"/>
 
-    <h3 class="text-lg mb-8 text-green-800">What you'll learn on this page:</h3>
+    <h3 class="text-lg mb-4 text-green-800">What you'll learn on this page:</h3>
     <ul class="list-reset">
       <li v-for="(learn, index) in willLearn" :key="index" class="flex items-center mb-3">
         <FontAwesomeIcon icon="check" class="check mr-3 text-lg text-green-500"/>
@@ -12,8 +12,8 @@
 
     <a
       href="https://scotch.io/books/vue"
-      class="py-4 px-2 bg-yellow-300 block no-underline text-center text-xl text-yellow-800 rounded shadow mt-8 hover:bg-yellow-200"
-    >Get the Book</a>
+      class="py-2 px-1 bg-yellow-300 block no-underline text-center text-xl text-yellow-800 rounded shadow-lg mt-8 hover:bg-yellow-200"
+    >Get the Book!</a>
   </div>
 </template>
 

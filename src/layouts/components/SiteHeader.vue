@@ -14,8 +14,15 @@
       <!-- right side nav -->
       <div class="ml-auto flex">
         <router-link class="link" to="/create">Create a Meme</router-link>
-        <router-link class="link border border-green-400 my-4 rounded" to="/login">
+        <router-link class="link my-5" to="/login">
           Login
+          <FontAwesomeIcon class="ml-3" icon="star"/>
+        </router-link>
+        <router-link
+          class="link bg-red-400 text-red-700 hover:bg-red-500 shadow-xl my-5 rounded"
+          to="/login"
+        >
+          Register
           <FontAwesomeIcon class="ml-3" icon="coffee"/>
         </router-link>
       </div>
