@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-5xl mb-10 text-green-800 text-center">My Memes</h2>
+    <h2 class="text-5xl mb-2 text-green-800 text-center">My Memes</h2>
     <div class="text-xl text-center" v-if="!memes">
       <h3>You don't have any memes yet</h3>
 

@@ -9,15 +9,18 @@
         <form class="flex" @submit.prevent="handleSubmit">
           <input
             type="text"
-            class="flex-1 p-4 mb-3 text-xl rounded shadow bg-green-300 mr-2"
+            class="flex-1 p-4 mb-6 text-xl rounded shadow bg-green-200 mr-2 shadow-lg"
             placeholder="Caption this thing..."
             v-model="memeText"
           >
-          <button type="submit" class="h-full p-4 w-32 bg-red-700 text-red-100 rounded">Save It!</button>
+          <button
+            type="submit"
+            class="h-full p-4 w-32 bg-red-700 text-red-100 rounded shadow-lg"
+          >Save It!</button>
         </form>
 
         <div class="relative">
-          <button @click="getRandomGif" class="absolute top-0 right-0 mr-2 mt-2">🔃</button>
+          <button @click="getRandomGif" class="absolute z-20 text-4xl top-0 right-0 mr-2 mt-2">🔃</button>
           <Meme :url="randomGif.images.original" :caption="memeText"/>
         </div>
       </div>
@@ -30,7 +33,7 @@
 
     <!-- or show no memes or user is logged out -->
     <div class="container mx-auto py-32">
-      <CreateAMemeSection/>
+      <TrendingGifsSection/>
     </div>
 
     <TourGuide
@@ -51,10 +54,10 @@ import axios from "axios";
 import Hero from "@/components/Hero";
 import Meme from "@/components/Meme";
 import MyMemes from "./components/MyMemes";
-import CreateAMemeSection from "./components/CreateAMemeSection";
+import TrendingGifsSection from "./components/TrendingGifsSection";
 
 export default {
-  components: { Hero, Meme, MyMemes, CreateAMemeSection },
+  components: { Hero, Meme, MyMemes, TrendingGifsSection },
   data() {
     return {
       randomGif: null,

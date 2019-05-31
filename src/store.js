@@ -75,7 +75,7 @@ export default new Vuex.Store({
       });
     },
     logout(context) {
-      return new Promise((resolve, reject) => {
+      return new Promise(resolve => {
         context.commit('logout');
         localStorage.removeItem('token');
         delete axios.defaults.headers.common['Authorization'];

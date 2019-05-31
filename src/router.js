@@ -26,6 +26,14 @@ export default new Router({
         import(/* webpackChunkName: "create" */ './views/create/Create.vue')
     },
     {
+      path: '/create/:gifId',
+      name: 'create-single',
+      component: () =>
+        import(
+          /* webpackChunkName: "create" */ './views/create/CreateSingle.vue'
+        )
+    },
+    {
       path: '/login',
       name: 'login',
       component: () =>

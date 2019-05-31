@@ -1,16 +1,19 @@
 <template>
-  <div class="create-a-meme-section">
+  <div>
     <!-- show a trending section so users can create a new meme -->
     <!-- if not logged in, then redirect them to the login/register page -->
     <!-- trending gifs -->
     <div v-if="trendingGifs">
-      <h2 class="title is-2">Let's make magic</h2>
-      <p>Select a GIF to create a meme.</p>
+      <h2 class="text-5xl mb-2 text-green-800 text-center">Let's make magic</h2>
+      <p class="text-xl text-center mb-10">Select a GIF to create a meme.</p>
 
       <div class="flex flex-wrap">
-        <div class="w-1/2 p-2" v-for="gif in trendingGifs" :key="gif.id">
-          <router-link class="gif" :to="{ name: 'create', params: { gifId: gif.id }}">
-            <img :src="gif.images.fixed_height">
+        <div class="w-1/3 p-2" v-for="gif in trendingGifs" :key="gif.id">
+          <router-link
+            class="relative h-64 w-full block overflow-hidden"
+            :to="{ name: 'create-single', params: { gifId: gif.id }}"
+          >
+            <img class="object-cover h-full w-full rounded-lg" :src="gif.images.fixed_height">
           </router-link>
         </div>
       </div>
@@ -42,25 +45,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.gif {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-
-  &:hover {
-    img {
-      transform: scale(1.1);
-    }
-  }
+img {
+  transition: 0.3s ease transform;
 }
 
-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: 0.1s ease transform;
+img:hover {
+  transform: scale(1.1);
 }
 </style>
-
