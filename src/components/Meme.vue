@@ -2,7 +2,7 @@
   <div class="meme">
     <img :src="url" class="relative rounded-lg z-10 object-cover w-full h-full shadow-lg">
     <p
-      class="caption absolute bottom-0 left-0 right-0 mb-8 text-4xl text-white uppercase px-3 text-center"
+      class="caption z-10 absolute bottom-0 left-0 right-0 mb-8 text-4xl text-white uppercase px-3 text-center"
     >{{ caption }}</p>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   &:after {
     @apply bg-green-600 shadow-md rounded-lg;
 
-    content: "";
+    /* content: ""; */
     position: absolute;
     width: 103%;
     height: 100%;

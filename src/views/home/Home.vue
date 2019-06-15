@@ -1,28 +1,9 @@
 <template>
   <div>
     <Hero color="bg-green-800" class="text-xl">
-      <div v-if="randomGif" class="relative w-2/3 mx-auto">
-        <div class="caption-this absolute text-4xl text-green-200">
-          <p>Try it out! Caption this 👇</p>
-        </div>
-
-        <form class="flex" @submit.prevent="handleSubmit">
-          <input
-            type="text"
-            class="flex-1 p-4 mb-6 text-xl rounded shadow bg-green-200 mr-2 shadow-lg"
-            placeholder="Caption this thing..."
-            v-model="memeText"
-          >
-          <button
-            type="submit"
-            class="h-full p-4 w-32 bg-red-700 text-red-100 rounded shadow-lg"
-          >Save It!</button>
-        </form>
-
-        <div class="relative">
-          <button @click="getRandomGif" class="absolute z-20 text-4xl top-0 right-0 mr-2 mt-2">🔃</button>
-          <Meme :url="randomGif.images.original" :caption="memeText"/>
-        </div>
+      <TryItOut :gif="randomGif"/>
+      <div class="relative">
+        <button @click="getRandomGif" class="absolute z-20 text-4xl top-0 right-0 mr-2 mt-2">🔃</button>
       </div>
     </Hero>
 
@@ -54,10 +35,11 @@ import axios from "axios";
 import Hero from "@/components/Hero";
 import Meme from "@/components/Meme";
 import MyMemes from "./components/MyMemes";
+import TryItOut from "./components/TryItOut";
 import TrendingGifsSection from "./components/TrendingGifsSection";
 
 export default {
-  components: { Hero, Meme, MyMemes, TrendingGifsSection },
+  components: { Hero, Meme, MyMemes, TryItOut, TrendingGifsSection },
   data() {
     return {
       randomGif: null,
@@ -72,7 +54,7 @@ export default {
         const { data } = await axios.get(`${apiUrl}/gifs/random`);
         this.randomGif = data;
       } catch (e) {
-        alert("wtf");
+        alert("api call failed for a random gif");
       }
     },
     handleSubmit() {}
