@@ -1,5 +1,7 @@
 <template>
-  <div class="tour-guide fixed bg-white rounded shadow-lg bottom-0 right-0 mb-10 mr-10 p-6 w-1/5">
+  <div
+    class="tour-guide fixed bg-white rounded shadow-lg bottom-0 right-0 z-10 mb-10 mr-10 p-6 w-1/5"
+  >
     <FontAwesomeIcon icon="star" class="star absolute text-yellow-500"/>
 
     <h3 class="text-lg mb-4 text-green-800">What you'll learn on this page:</h3>

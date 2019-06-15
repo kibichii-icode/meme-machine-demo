@@ -1,9 +1,10 @@
 <template>
-  <div v-if="gif">
+  <div v-if="gif" class="relative w-2/3 mx-auto">
     <div class="caption-this absolute text-4xl text-green-200">
       <p>Try it out! Caption this 👇</p>
     </div>
 
+    <!-- form to get the text -->
     <form class="flex" @submit.prevent="handleSubmit">
       <input
         type="text"
@@ -11,13 +12,19 @@
         placeholder="Caption this thing..."
         v-model="text"
       >
-      <button
-        type="submit"
-        class="h-full p-4 w-32 bg-red-700 text-red-100 rounded shadow-lg"
-      >Save It!</button>
+      <button class="h-full p-4 w-32 bg-red-700 text-red-100 rounded shadow-lg">Save It!</button>
     </form>
 
-    <Meme :url="gif.images.original" :caption="text"/>
+    <div class="relative">
+      <!-- show the meme -->
+      <Meme :url="gif.images.original" :caption="text"/>
+
+      <!-- get random gif button -->
+      <button
+        @click="getRandomGif"
+        class="get-random absolute z-20 text-4xl right-0 top-0 mr-2 mt-2"
+      >🔃</button>
+    </div>
   </div>
 </template>
 
@@ -32,7 +39,10 @@ export default {
   },
   methods: {
     handleSubmit() {
-      this.$emit("gif-saved", { text });
+      this.$emit("gifSaved", { text });
+    },
+    getRandomGif() {
+      this.$emit("gifRequested");
     }
   }
 };

@@ -1,10 +1,8 @@
 <template>
   <div>
+    <!-- try it out section -->
     <Hero color="bg-green-800" class="text-xl">
-      <div class="relative w-2/3 mx-auto">
-        <TryItOut :gif="randomGif"/>
-        <button @click="getRandomGif" class="get-random absolute z-20 text-4xl right-0 mr-2 mt-2">🔃</button>
-      </div>
+      <TryItOut :gif="randomGif" @gifRequested="getRandomGif"/>
     </Hero>
 
     <!-- show a users memes -->
@@ -56,18 +54,11 @@ export default {
       } catch (e) {
         alert("api call failed for a random gif");
       }
-    },
-    handleSubmit() {}
+    }
   },
   mounted() {
     this.getRandomGif();
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.get-random {
-  top: 30px;
-}
-</style>
 
