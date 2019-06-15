@@ -30,20 +30,27 @@
 
 <script>
 import Meme from "@/components/Meme";
+import axios from "axios";
 
 export default {
   components: { Meme },
-  props: ["gif"],
   data() {
-    return { text: "" };
+    return { text: "", gif: null };
   },
   methods: {
-    handleSubmit() {
-      this.$emit("gifSaved", { text });
+    async getRandomGif() {
+      const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
+      const { data } = await axios.get(`${apiUrl}/gifs/random`);
+      this.gif = data;
     },
-    getRandomGif() {
-      this.$emit("gifRequested");
+    handleSubmit() {
+      // check if the user is logged in
+      // if not logged in, show signup modal
+      // if logged in, save it and send them to creation page?
     }
+  },
+  mounted() {
+    this.getRandomGif();
   }
 };
 </script>

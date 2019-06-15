@@ -2,7 +2,7 @@
   <div>
     <!-- try it out section -->
     <Hero color="bg-green-800" class="text-xl">
-      <TryItOut :gif="randomGif" @gifRequested="getRandomGif"/>
+      <TryItOut/>
     </Hero>
 
     <!-- show a users memes -->
@@ -37,28 +37,7 @@ import TryItOut from "./components/TryItOut";
 import TrendingGifsSection from "./components/TrendingGifsSection";
 
 export default {
-  components: { Hero, Meme, MyMemes, TryItOut, TrendingGifsSection },
-  data() {
-    return {
-      randomGif: null,
-      memeText: ""
-    };
-  },
-  methods: {
-    async getRandomGif() {
-      const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
-
-      try {
-        const { data } = await axios.get(`${apiUrl}/gifs/random`);
-        this.randomGif = data;
-      } catch (e) {
-        alert("api call failed for a random gif");
-      }
-    }
-  },
-  mounted() {
-    this.getRandomGif();
-  }
+  components: { Hero, Meme, MyMemes, TryItOut, TrendingGifsSection }
 };
 </script>
 
