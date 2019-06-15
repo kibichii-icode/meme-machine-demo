@@ -1,5 +1,5 @@
 <template>
-  <div v-if="gif" class="relative w-2/3 mx-auto">
+  <div v-if="gif">
     <div class="caption-this absolute text-4xl text-green-200">
       <p>Try it out! Caption this 👇</p>
     </div>
@@ -38,5 +38,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.caption-this {
+  top: -70px;
+  left: -150px;
+  transform: rotate(-7deg);
+  font-family: "Permanent Marker";
+}
 </style>
