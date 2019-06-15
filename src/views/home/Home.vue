@@ -11,8 +11,10 @@
     </div>
 
     <!-- or show no memes or user is logged out -->
-    <div class="container mx-auto py-32">
-      <TrendingGifsSection/>
+    <div class="bg-green-100">
+      <div class="container mx-auto py-32">
+        <TrendingGifsSection/>
+      </div>
     </div>
 
     <TourGuide
