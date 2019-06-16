@@ -1,11 +1,23 @@
 <template>
-  <div>meme goes here</div>
+  <Hero>
+    <div class="flex">
+      <div>
+        {{ meme.id }}
+        <Meme :meme="meme"/>
+      </div>
+      <div>
+        <img :src="meme.captioned_url">
+      </div>
+    </div>
+  </Hero>
 </template>
 
 <script>
 import axios from "axios";
+import Hero from "@/components/Hero";
 
 export default {
+  components: { Hero },
   data() {
     return {
       meme: null

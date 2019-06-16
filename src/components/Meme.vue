@@ -1,17 +1,34 @@
 <template>
   <div class="meme">
-    <img :src="url" class="relative rounded-lg z-10 object-cover w-full h-full shadow-lg">
+    <img :src="memeUrl" class="relative rounded-lg z-10 object-cover w-full h-full shadow-lg">
     <p
       class="caption z-10 absolute bottom-0 left-0 right-0 mb-8 text-4xl text-white uppercase px-3 text-center"
-    >{{ caption }}</p>
+    >{{ memeCaption }}</p>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    url: String,
-    caption: String
+    url: {
+      type: String,
+      default: null
+    },
+    caption: {
+      type: String,
+      default: null
+    },
+    meme: {
+      default: null
+    }
+  },
+  computed: {
+    memeUrl() {
+      return this.meme ? this.meme.gif_original_url : this.url;
+    },
+    memeText() {
+      return this.meme ? this.meme.text : this.caption;
+    }
   }
 };
 </script>

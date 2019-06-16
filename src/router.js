@@ -30,20 +30,22 @@ export default new Router({
       name: 'create-single',
       component: () =>
         import(
-          /* webpackChunkName: "create" */ './views/create/CreateSingle.vue'
+          /* webpackChunkName: "create-single" */ './views/create/CreateSingle.vue'
         )
     },
     {
       path: '/memes/:memeId',
       name: 'single-meme',
       component: () =>
-        import(/* webpackChunkName: "create" */ './views/memes/SingleMeme.vue')
+        import(
+          /* webpackChunkName: "single-meme" */ './views/memes/SingleMeme.vue'
+        )
     },
     {
       path: '/memes',
       name: 'all-memes',
       component: () =>
-        import(/* webpackChunkName: "create" */ './views/memes/AllMemes.vue')
+        import(/* webpackChunkName: "all-memes" */ './views/memes/AllMemes.vue')
     },
     {
       path: '/login',

@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import Hero from "@/components/Hero";
 import MyMemes from "./components/MyMemes";
 import TryItOut from "./components/TryItOut";
