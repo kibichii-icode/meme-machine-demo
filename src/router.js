@@ -34,6 +34,18 @@ export default new Router({
         )
     },
     {
+      path: '/memes/:memeId',
+      name: 'single-meme',
+      component: () =>
+        import(/* webpackChunkName: "create" */ './views/memes/SingleMeme.vue')
+    },
+    {
+      path: '/memes',
+      name: 'all-memes',
+      component: () =>
+        import(/* webpackChunkName: "create" */ './views/memes/AllMemes.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () =>

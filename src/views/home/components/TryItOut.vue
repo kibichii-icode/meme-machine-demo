@@ -8,11 +8,14 @@
     <form class="flex" @submit.prevent="handleSubmit">
       <input
         type="text"
-        class="flex-1 p-4 mb-6 text-xl rounded shadow bg-green-200 mr-2 shadow-lg"
+        class="flex-1 p-4 mb-6 text-xl rounded shadow-lg bg-green-200 mr-2 shadow-lg"
         placeholder="Caption this thing..."
         v-model="text"
       >
-      <button class="h-full p-4 w-32 bg-red-700 text-red-100 rounded shadow-lg">Save It!</button>
+      <button class="h-full py-4 px-8 bg-red-700 text-red-100 rounded shadow-lg">
+        Share It!
+        <FontAwesomeIcon class="ml-3" icon="share-alt"/>
+      </button>
     </form>
 
     <div class="relative">
@@ -43,7 +46,18 @@ export default {
       const { data } = await axios.get(`${apiUrl}/gifs/random`);
       this.gif = data;
     },
+    async createMeme() {
+      const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
+      const { data } = await axios.post(`${apiUrl}/memes`, {
+        gif_id: this.gif.id,
+        text: this.text
+      });
+
+      // navigate the user to the meme they just created
+      this.$router.push({ name: "single-meme", params: { memeId: data.id } });
+    },
     handleSubmit() {
+      this.createMeme();
       // check if the user is logged in
       // if not logged in, show signup modal
       // if logged in, save it and send them to creation page?

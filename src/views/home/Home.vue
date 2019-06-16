@@ -33,13 +33,12 @@
 <script>
 import axios from "axios";
 import Hero from "@/components/Hero";
-import Meme from "@/components/Meme";
 import MyMemes from "./components/MyMemes";
 import TryItOut from "./components/TryItOut";
 import TrendingGifsSection from "./components/TrendingGifsSection";
 
 export default {
-  components: { Hero, Meme, MyMemes, TryItOut, TrendingGifsSection }
+  components: { Hero, MyMemes, TryItOut, TrendingGifsSection }
 };
 </script>
 

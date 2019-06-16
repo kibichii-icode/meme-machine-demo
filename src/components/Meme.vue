@@ -19,30 +19,6 @@ export default {
 <style lang="scss" scoped>
 .meme {
   height: 600px;
-
-  &:before,
-  &:after {
-    @apply bg-green-600 shadow-md rounded-lg;
-
-    /* content: ""; */
-    position: absolute;
-    width: 103%;
-    height: 100%;
-    z-index: 0;
-  }
-
-  &:before {
-    left: -10px;
-    top: 10px;
-    transform: rotateZ(3deg);
-  }
-
-  &:after {
-    background: white;
-    left: -10px;
-    top: 10px;
-    transform: rotateZ(-2deg);
-  }
 }
 
 .caption {
