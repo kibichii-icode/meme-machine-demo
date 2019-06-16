@@ -2,6 +2,10 @@
   <div>
     <GifCreator/>
 
+    - show trending gifs to start
+    - show a search bar so people can search
+    - when clicking a meme, route to create-single
+
     <TourGuide
       :willLearn="[
         'Data binding',
