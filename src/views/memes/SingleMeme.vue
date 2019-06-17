@@ -43,50 +43,30 @@ export default {
       this.meme = data;
     }
   },
-  computed: {
-    title() {
-      return "blah";
-    },
-    image() {
-      return "blah";
-    },
-    description() {
-      return "blah";
-    }
-  },
   mounted() {
     this.getMeme();
   },
-  metaInfo: {
-    title: "I made the #Vue app that made this meme!",
-    // OpenGraph data (Most widely used)
-    meta: [
-      {
-        property: "og:image",
-        content: this.image
-      },
-      // Often the same as your meta description, but not always.
-      { property: "og:description", content: this.description },
-
-      // Twitter card
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: this.title },
-      {
-        name: "twitter:description",
-        content: this.description
-      },
-      {
-        name: "twitter:image:src",
-        content: this.image
-      },
-
-      // Google / Schema.org markup:
-      { itemprop: "description", content: this.description },
-      {
-        itemprop: "image",
-        content: this.image
-      }
-    ]
+  metaInfo() {
+    return {
+      title: "I made the #Vue app that made this meme!",
+      meta: [
+        // opengraph data - facebook
+        {
+          property: "og:image",
+          content: this.meme ? this.meme.captioned_url : null
+        },
+        // twitter
+        {
+          name: "twitter:image:src",
+          content: this.meme ? this.meme.captioned_url : null
+        },
+        // google
+        {
+          itemprop: "image",
+          content: this.meme ? this.meme.captioned_url : null
+        }
+      ]
+    };
   }
 };
 </script>
