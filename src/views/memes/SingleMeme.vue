@@ -77,6 +77,10 @@ h2 {
 }
 
 .button {
-  @apply mb-3 w-full block p-4 bg-green-600 text-green-100 rounded shadow-md cursor-pointer;
+  @apply mb-3 w-full block p-4 bg-green-600  text-green-100 rounded shadow-md cursor-pointer;
+
+  &:hover {
+    @apply bg-green-500;
+  }
 }
 </style>

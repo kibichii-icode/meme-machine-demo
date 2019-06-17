@@ -8,6 +8,11 @@
 import SiteLayout from "@/layouts/SiteLayout";
 
 export default {
-  components: { SiteLayout }
+  components: { SiteLayout },
+  metaInfo() {
+    meta: {
+      title: "Meme Machine";
+    }
+  }
 };
 </script>

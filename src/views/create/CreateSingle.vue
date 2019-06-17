@@ -10,7 +10,7 @@ export default {
     return { gif: null };
   },
   methods: {
-    getOneGif() {
+    getGif() {
       const apiUrl = process.env.VUE_APP_API_URL || "http://localhost:8000/api";
       axios
         .get(`${apiUrl}/gifs/${this.$route.params.gifId}`)
@@ -18,7 +18,7 @@ export default {
     }
   },
   mounted() {
-    this.getOneGif();
+    this.getGif();
   }
 };
 </script>

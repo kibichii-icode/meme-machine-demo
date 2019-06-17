@@ -4,7 +4,11 @@
   >
     <FontAwesomeIcon icon="star" class="star absolute text-yellow-500"/>
 
-    <h3 class="text-lg mb-4 text-green-800">What you'll learn on this page:</h3>
+    <h2 class="text-xl mb-2 text-green-800">
+      📗
+      <a href="https://scotch.io/books/vue" class="text-green-800">Vue for the Real World</a>
+    </h2>
+    <h3 class="text-md mb-4 text-green-700">What you'll learn on this page:</h3>
     <ul class="list-reset">
       <li v-for="(learn, index) in willLearn" :key="index" class="flex items-center mb-3">
         <FontAwesomeIcon icon="check" class="check mr-3 text-lg text-green-500"/>
