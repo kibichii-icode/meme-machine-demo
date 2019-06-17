@@ -1,9 +1,9 @@
 <template>
-  <div class="meme">
+  <div class="meme relative">
     <img :src="memeUrl" class="relative rounded-lg z-10 object-cover w-full h-full shadow-lg">
     <p
-      class="caption z-10 absolute bottom-0 left-0 right-0 mb-8 text-4xl text-white uppercase px-3 text-center"
-    >{{ memeCaption }}</p>
+      class="caption z-10 absolute bottom-0 left-0 right-0 mb-4 text-4xl text-white uppercase px-3 text-center"
+    >{{ memeText }}</p>
   </div>
 </template>
 
